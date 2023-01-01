@@ -17,8 +17,7 @@ public class DoWhile {
 		} while (input != 0);
 		
 		System.out.println(sum);
-		
-		
+
 	}
 
 }
