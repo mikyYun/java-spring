@@ -1,0 +1,23 @@
+package ch16;
+
+public class EmployeeTest {
+
+	public static void main(String[] args) {
+
+		Employee employeeA = new Employee();
+		employeeA.setEmployeeName("Mike");
+
+//		System.out.println(employeeA.serialNum);
+		System.out.println(Employee.serialNum);
+		
+		Employee employeeB = new Employee();
+		employeeB.setEmployeeName("Yuni");
+		
+		System.out.println(employeeA.getEmployeeId());
+
+		System.out.println(Employee.serialNum);
+		System.out.println(employeeB.getEmployeeId());
+		
+	}
+
+}
