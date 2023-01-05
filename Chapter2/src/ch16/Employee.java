@@ -5,7 +5,6 @@ public class Employee {
 	// Use static for common/shared value
 	public static int serialNum = 1000;
 	
-	
 	private int employeeId;
 	private String employeeName;
 	private String department;
@@ -38,6 +37,5 @@ public class Employee {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
-
 
 }
