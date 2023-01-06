@@ -1,0 +1,48 @@
+package ch24;
+
+// ctrl shift o
+import java.util.ArrayList;
+
+public class Student {
+	
+	String studentName;
+	int studentId;
+//	create array for subjects
+	ArrayList<Subject> subjectList;
+	
+	
+//	public Student() {}
+	
+	public Student(int serialNum, String studentName) {
+		this.studentId = serialNum;
+		this.studentName = studentName;
+		
+		subjectList = new ArrayList<>();
+	}
+	
+	
+	public void addSubject(String subjectName, int score) {
+		Subject subject = new Subject();
+		
+		subject.setName(subjectName);
+		subject.setScore(score);
+		
+		subjectList.add(subject);
+	}
+	
+	public void showScoreInfo() {
+		int total = 0;
+		
+		for ( Subject subject : subjectList) {
+			int score = subject.getScore();
+			total += score;
+			String subjectName = subject.getName();
+			
+			System.out.println(studentName + "'s " + subjectName + " score is : " + score);	
+		}
+		
+		System.out.println(studentName + "'s total score is : " + total);
+		System.out.println("==============LINE=============");
+	}
+	
+}
