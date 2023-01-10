@@ -2,4 +2,6 @@
 javajungsuk_basic_sample.pdf
 javajungsuk_basic_요약집.pdf
 flash
-solutions
+solutionsSystem.out.println(year + "y-" + month + "m-" + day + "d");
+		System.out.println(date + "day");
+		
