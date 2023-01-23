@@ -10,7 +10,10 @@
 </h1>
 
 <P>
-	${year}yr ${month}m ${day}. Today is ${date}
+	${myDate.year}yr ${myDate.month}m ${myDate.day}. Today is ${date}
 </P>
+<p>
+	year = <%=request.getParameter("year") %>
+</p>
 </body>
 </html>
