@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.net.URLDecoder"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,7 +71,7 @@
 <body>
    <form action="<c:url value="/register/save"/>" method="POST" onsubmit="return formCheck(this)" autofocus >
     <div class="title">Register</div>
-    <div id="msg" class="msg"> </div> 
+    <div id="msg" class="msg"> ${URLDecoder.decode(param.msg, "utf-8")} </div> 
     <label for="">ID</label>
     <input class="input-field" type="text" name="id" placeholder="8~12 digits of numbers and characters" value="my_id">
     <label for="">PASSWORD</label>
