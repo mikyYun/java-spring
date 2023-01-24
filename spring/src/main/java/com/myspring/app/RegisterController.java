@@ -5,13 +5,15 @@ import java.net.URLEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class RegisterController {
-//	@RequestMapping("/register/add")
-//	public String register() {
-//		return "registerForm";
-//	}
+	@RequestMapping(value="/register/add", method={RequestMethod.GET, RequestMethod.POST})
+	public String register() {
+		return "registerForm";
+	}
 	
 //	@RequestMapping(value="/register/save", method=RequestMethod.POST)
 	@PostMapping("/register/save")
@@ -23,7 +25,8 @@ public class RegisterController {
 			String msg = URLEncoder.encode("Invalid ID");
 			
 			model.addAttribute("msg", msg);
-			return "redirect:/register/add";
+//			return "redirect:/register/add";
+			return "forward:/register/add";
 //			return "redirect:/register/add?msg=" + msg; // URL rewriting
 		}
 		
@@ -32,6 +35,6 @@ public class RegisterController {
 
 private boolean isValid(User user) {
 
-	return true;
+	return false;
 }
 }
