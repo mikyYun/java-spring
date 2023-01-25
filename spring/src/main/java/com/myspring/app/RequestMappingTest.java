@@ -6,10 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RequestMappingTest {
 
-	@RequestMapping("/login/??")
-	public void test4() {
-		System.out.println("urlpattern=/login/??");
-	}
+
 	@RequestMapping("/login/hello.do")
 	public void test1() {
 		System.out.println("urlpattern=/login/hello.do");
@@ -25,6 +22,10 @@ public class RequestMappingTest {
 		System.out.println("urlpattern=/login/**/try/*.do");
 	}
 	
+	@RequestMapping("/login/??")
+	public void test4() {
+		System.out.println("urlpattern=/login/??");
+	}
 	
 	@RequestMapping("*.do")
 	public void test5() {

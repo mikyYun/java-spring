@@ -19,14 +19,18 @@ public class PerformanceFilter implements Filter {
 	}
 
 	@Override
-	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {//		1. pre-process
 		long startTime = System.currentTimeMillis();
 		
 //		2. call servlet or next filter
-		chain.doFilter(req, res);
+		chain.doFilter(request, response);
 		
 //		3. post-process
+		HttpServletRequest req = (HttpServletRequest)request;
+		String referer = req.getHeader("referer");
+		String method = req.getMethod();
+		System.out.println("[" + referer + "] => " + method + "[" + req.getRequestURI() + "]");
 		System.out.print("RequestURL FROM Servlet Request: " + ((HttpServletRequest)req).getRequestURL());
 		System.out.println("    Time : " + (System.currentTimeMillis() - startTime) + "ms");
 
