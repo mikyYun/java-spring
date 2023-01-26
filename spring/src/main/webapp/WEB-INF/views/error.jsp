@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=utf-8" isErrorPage="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
@@ -9,13 +9,13 @@
 	<p>
 		Exception Title: 
 		<span>
-			${ex} }
+			${pageContxt.exception}
 		</span><br />
 	</p>
 	<p>
 		Exception Message: 
 		<span>
-			${ex.message}
+			${pageContxt.exception.message}
 		</span>
 	</p>
 	<ol>
