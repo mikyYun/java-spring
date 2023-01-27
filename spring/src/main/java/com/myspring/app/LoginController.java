@@ -1,5 +1,6 @@
 package com.myspring.app;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 import javax.servlet.http.Cookie;
@@ -16,8 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/login")
 public class LoginController {
+	
+//	System.out.println("TEST@@@@@");
+	
 	@GetMapping("/login")
 	public String loginForm() {
+		System.out.println("TEST@@@");
 		return "loginForm";
 	}
 	
@@ -31,10 +36,17 @@ public class LoginController {
 	
 	
 	@PostMapping("/login")
-	public String login(@CookieValue("id") String cookieId, String id, String pwd, String toURL, boolean rememberId, HttpServletRequest req, HttpServletResponse res) throws Exception {
+	public String login(@CookieValue("id") String cookieId, String id, String pwd, String toURL, boolean rememberId, HttpServletRequest req, HttpServletResponse res)  {
+		System.out.println("TEST");
 		if (!loginCheck(id, pwd)) {
-			String msg= URLEncoder.encode("id or password is invalid", "utf-8");	
-			return "redirect:/login/login?msg=" + msg;
+			String msg;
+			try {
+				msg = URLEncoder.encode("id or password is invalid", "utf-8");
+				return "redirect:/login/login?msg=" + msg;
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
 			
 		}
 		HttpSession session = req.getSession();
@@ -60,6 +72,7 @@ public class LoginController {
 	}
 	
 	private boolean loginCheck(String id, String pwd) {
+		System.out.println("LOGIN ATTEMPT" + id + pwd);
 		return "asdf".equals(id) && "1234".equals(pwd);
 	}
 	

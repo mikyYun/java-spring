@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=utf-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page import="java.net.URLDecoder"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,9 +71,12 @@
     <title>Register</title>
 </head>
 <body>
-   <form action="<c:url value="/register/save"/>" method="POST" onsubmit="return formCheck(this)" autofocus >
+   <!-- <form action="<c:url value="/register/add"/>" method="POST" onsubmit="return formCheck(this)" autofocus > -->
+   <form:form modelAttribute="user">
     <div class="title">Register</div>
-    <div id="msg" class="msg"> ${URLDecoder.decode(param.msg, "utf-8")} </div> 
+    <!--  <div id="msg" class="msg"> ${URLDecoder.decode(param.msg, "utf-8")} </div>  -->
+    <div id="msg" class="msg"> <form:errors path="id" cssClass="msg" /> </div> 
+    
     <label for="">ID</label>
     <input class="input-field" type="text" name="id" placeholder="8~12 digits of numbers and characters" value="my_id">
     <label for="">PASSWORD</label>
@@ -81,14 +86,16 @@
     <label for="">E-MAIL</label>
     <input class="input-field" type="text" name="email" placeholder="example@test.com" value="example@test.com"> 
     <label for="">Date Of Birth</label>
-<!--     <input class="input-field" type="text" name="birth" placeholder="2020/12/31" value="2020/12/31"> -->
+	<input class="input-field" type="text" name="birth" placeholder="2020-12-31" value="2020-12-31">
+	<label for="">Hobby</label>
+	<input class="input-field" type="text" name="hobby" >
     <div class="sns-chk">
         <label><input type="checkbox" name="sns" value="facebook"/>Facebook</label>
         <label><input type="checkbox" name="sns" value="kakaotalk"/>kakaotalk</label>
         <label><input type="checkbox" name="sns" value="instagram"/>Instagram</label>
     </div>
     <button>Register</button>
-   </form> 
+   </form:form> 
    <script>
        function formCheck(frm) {
             var msg ='';
