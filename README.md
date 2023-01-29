@@ -23,16 +23,10 @@ https://www.youtube.com/watch?v=oJlCC1DutbA&list=PLW2UjW795-f6xWA2_MUhEVgPauhGl3
   practice for creating CRUD in Java and spring with DB
 
 
-## Flows in Java(STS) _ hello world 
+## CRUD project
 
-  1. server runs `web.xml`
+### Initialize project
 
-  2. read context in `root-context` and `servlet-context`
+Initialize project using spring initializr
 
-  3. controller address mapping(HomeController.java)
-
-  4. execute internal method of Controller
-
-```java
-  
-```
+[Initialize project](_docs/java_crud_init.jpg)
