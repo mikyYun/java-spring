@@ -3,6 +3,7 @@ package hello.hellospring.controller;
 import hello.hellospring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 // Controller -> Service -> Repository
 @Controller
@@ -30,11 +31,16 @@ public class MemberController {
 1.
 
 */
-private final MemberService memeberService;
+    private final MemberService memeberService;
 
     @Autowired
     public MemberController(MemberService memeberService) {
         this.memeberService = memeberService;
+    }
+
+    @GetMapping("/members/new")
+    public String createForm() {
+        return "members/createMemberForm";
     }
 }
 
