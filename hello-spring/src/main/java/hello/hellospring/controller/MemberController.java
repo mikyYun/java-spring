@@ -8,11 +8,33 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class MemberController {
 
-    private final MemberService memeberService;
+    /*
+    3.
+    //cons.. : setMethod has to be public
 
+    private MemberService memberService;
+
+    @Autowired
+    public void setMemberService(MemberService memberService) {
+        this.memberService = memberService;
+    }
+     */
+
+
+  /*
+  2.
+    @Autowired private MemberService memberService;
+  */
+
+/*
+1.
+
+*/
+private final MemberService memeberService;
 
     @Autowired
     public MemberController(MemberService memeberService) {
         this.memeberService = memeberService;
     }
 }
+
