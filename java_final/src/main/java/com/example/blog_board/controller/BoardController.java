@@ -74,7 +74,7 @@ public class BoardController {
     {
 
 
-        Board board = /* TODO 수정 작업 board 속성 값을 받아 board 업데이트 */
+        Board board = /* TODO 수정 작업 board 속성 값을 받아 board 업데이트 */;
         boardService.update(board);
 
         return "redirect:/boards/{boardId}";
