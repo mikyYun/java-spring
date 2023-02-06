@@ -1,22 +1,16 @@
 package hello.hellospring.service;
 
-import hello.hellospring.repository.JdbcMemberRepository;
-import hello.hellospring.repository.JpaMemberRepository;
 import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
-import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import javax.sql.DataSource;
 
 @Configuration
 public class SpringConfig{
 
 
     /*
-    // before jpa
+//  jdbc _ before jpa
     private DataSource dataSource;
 
     @Autowired
@@ -25,22 +19,39 @@ public class SpringConfig{
     }
     */
 
+    /*
+//  jpa _ before with spring
     private EntityManager em;
-
 
     @Autowired
     public SpringConfig(EntityManager em) {
         this.em = em;
     }
-    @Bean
-    public MemberService memberService() {
-        return new MemberService(memberRepository());
+     */
+
+    private final MemberRepository memberRepository;
+
+//    @Autowired
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
     }
 
+
+    @Bean
+    public MemberService memberService() {
+//        return new MemberService(memberRepository()); // before with Spring
+        return new MemberService(memberRepository);
+    }
+
+    /*
+//    This doesn't need when we use JPA with Spring
     @Bean
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository(); // java
 //        return new JdbcMemberRepository(dataSource); //jdbc
-        return new JpaMemberRepository(em);
+//        return new JpaMemberRepository(em); // jpa
+//
     }
+
+     */
 }
