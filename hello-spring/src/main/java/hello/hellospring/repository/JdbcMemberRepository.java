@@ -1,6 +1,6 @@
 package hello.hellospring.repository;
 import hello.hellospring.domain.Member;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityManager;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import javax.sql.DataSource;
 import java.sql.*;
