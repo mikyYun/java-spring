@@ -1,11 +1,11 @@
 DROP TABLE IF EXISTS tbl_board;
 CREATE TABLE tbl_board(
-boardId Long auto_increment,
-title varchar (30) not null,
-content varchar (30) not null,
-name varchar (30) not null,
-read integer default 0,
-primary key(boardId)
+    boardId INT auto_increment,
+    title varchar (30) not null,
+    content varchar (30) not null,
+    name varchar (30) not null,
+    `read` integer default 0,
+    primary key(boardId)
 );
 
 INSERT INTO tbl_board(title, content, name) VALUES('title1', 'content1', 'name1');
