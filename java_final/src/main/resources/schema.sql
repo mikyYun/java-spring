@@ -1,3 +1,4 @@
+USE blog_board;
 DROP TABLE IF EXISTS tbl_board;
 CREATE TABLE tbl_board(
     boardId INT auto_increment,
