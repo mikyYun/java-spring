@@ -1,0 +1,12 @@
+package ch08;
+
+public class CharacterTest {
+
+	public static void main(String[] args) {
+		
+		char chOne = 'A';
+		System.out.println(chOne);
+		System.out.println((int)chOne);
+	}
+
+}

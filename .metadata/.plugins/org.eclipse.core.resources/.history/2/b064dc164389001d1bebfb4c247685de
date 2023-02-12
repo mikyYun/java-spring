@@ -1,0 +1,17 @@
+package ch14;
+
+public class IfElseTest {
+
+	public static void main(String[] args) {
+
+		int age = 7;
+		
+		if (age >= 8) {
+			System.out.println("Go to school");
+		}
+		
+		System.out.println("Play fun")
+		
+	}
+
+}

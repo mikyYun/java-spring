@@ -1,0 +1,66 @@
+package ch21;
+
+public class ObjectCopyTest {
+	
+	public static void main(String[] args) {
+		
+	
+		Book[] library = new Book[5];
+		// copy Book
+		Book[] copyLibrary = new Book[5];
+		
+		library[0] = new Book("Name", "authorName");
+		library[1] = new Book("Name", "authorName");
+		library[2] = new Book("Name", "authorName");
+		library[3] = new Book("Name", "authorName");
+		library[4] = new Book("Name", "authorName");
+		
+		
+//		independent
+		copyLibrary[0] = new Book();
+		copyLibrary[1] = new Book();
+		copyLibrary[2] = new Book();
+		copyLibrary[3] = new Book();
+		copyLibrary[4] = new Book();
+		
+		for (int i = 0; i < copyLibrary.length; i ++) {
+			copyLibrary[i].setAuthor(library[i].getAuthor());
+			copyLibrary[i].setTitle(library[i].getTitle());
+		}
+//		System.arraycopy(library, 0, copyLibrary, 0, 5);
+		
+//		System.out.println("==== library ====");
+//		
+//		for (Book book : library) {
+//			System.out.println(book);
+//			book.showInfo();
+//		}
+//		
+//		System.out.println("==== copy library ====");
+//		
+//		for (Book book : copyLibrary) {
+//			System.out.println(book);
+//			book.showInfo();
+//		}
+//		arraycopy method copy memory address as well.
+
+		
+		copyLibrary[1].setAuthor("NewAuthor"); // this will update original array and copied array if copyLibrary created by arraycopy method
+		System.out.println("==== library ====");
+		
+		for (Book book : library) {
+			System.out.println(book);
+			book.showInfo();
+		}
+		
+		System.out.println("==== copy library ====");
+		
+		for (Book book : copyLibrary) {
+			System.out.println(book);
+			book.showInfo();
+		}
+
+	
+	
+	}
+}

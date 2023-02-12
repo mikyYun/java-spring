@@ -1,0 +1,28 @@
+package ch14;
+
+public class Student {
+
+	int money;
+	String studentName;
+	
+	public Student(String strudentName, int money) {
+		this.studentName = studentName;
+		this.money = money;
+	}
+	
+	public void takeBus(Bus bus) {
+		
+		bus.take();
+		this.money -= bus.fee;
+	}
+	
+	public void takeSubway(Subway subway) {
+		subway.take();
+		this.money -= subway.fee;
+	}
+	
+	public void showInfo() {
+		System.out.println(studentName + " has " + money);
+	}
+	
+}

@@ -1,0 +1,25 @@
+package ch15;
+
+public class Transit {
+
+	String type;
+	String companyName;
+	int fee;
+	int total;
+	
+	public Transit(String type, String companyName, int fee) {
+		this.type = type;
+		this.companyName = companyName;
+		this.fee = fee;
+	}
+	
+	private void getFee() {
+		total += fee;
+	}
+	
+	public void takePassenger() {
+		this.getFee();
+		System.out.println(companyName + "'s " + type + "take a passenger");
+	}
+	
+}

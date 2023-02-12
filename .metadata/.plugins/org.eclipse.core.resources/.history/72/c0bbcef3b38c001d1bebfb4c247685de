@@ -1,0 +1,16 @@
+package ch19;
+
+public class CompanyTest {
+
+	public static void main(String[] args) {
+
+		Company noCompany = Company();
+		
+		Company company = Company.getInstance();
+		
+		System.out.println(noCompany);
+		System.out.println(company);
+		
+	}
+
+}
