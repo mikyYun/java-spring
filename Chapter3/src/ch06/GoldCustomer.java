@@ -12,7 +12,6 @@ public class GoldCustomer extends Customer {
     @Override
     public int calcPrice(int price) {
         bonusPoint += price * bonusRatio;
-        price -= (int)(price * salesRatio);
-        return price;
+        return price - (int)(price * salesRatio);
     }
 }

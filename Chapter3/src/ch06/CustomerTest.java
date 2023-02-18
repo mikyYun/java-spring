@@ -17,7 +17,7 @@ public class CustomerTest {
         customerList.add(c3);
         customerList.add(c4);
         customerList.add(c5);
-
+        /*
         for (Customer customer : customerList) {
             System.out.println(customer.showCustomerInfo());
         }
@@ -26,8 +26,14 @@ public class CustomerTest {
         int price = 10000;
         for (Customer customer: customerList) {
             int cost = customer.calcPrice(price);
-            System.out.println(customer.getCustomerName() + " paied " + cost);
+            System.out.println(customer.getCustomerName() + " paid " + cost);
             System.out.println(customer.getCustomerName() + "'s current point is : " + customer.bonusPoint);
         }
+         */
+        if (c4 instanceof VIPCustomer) {
+            VIPCustomer vc = (VIPCustomer)c4;
+            System.out.println(c4.showCustomerInfo());
+        }
     }
+
 }
