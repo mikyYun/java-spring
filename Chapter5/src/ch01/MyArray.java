@@ -69,4 +69,21 @@ public class MyArray {
             return false;
         }
     }
+
+    public void printAll() {
+        if (count == 0) {
+            System.out.println("No contents");
+            return;
+        }
+        for (int i = 0; i < count; i++) {
+            System.out.println(intArr[i]);
+        }
+    }
+
+    public void removeAll() {
+        for (int i = 0; i < count; i++) {
+            intArr[i] = 0;
+        }
+        count = 0;
+    }
 }
