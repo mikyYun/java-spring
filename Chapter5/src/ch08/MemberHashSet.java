@@ -1,20 +1,21 @@
-package ch07;
+package ch08;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Objects;
 
-public class MemberArrayList {
-    private ArrayList<Member> arrayList;
+public class MemberHashSet {
+    private HashSet<Member> hashSet;
 
-    public MemberArrayList() {
-        arrayList = new ArrayList<>();
+    public MemberHashSet() {
+        hashSet = new HashSet<>();
     }
-    public MemberArrayList(int size) {
-        arrayList = new ArrayList<>(size);
+    public MemberHashSet(int size) {
+        hashSet = new HashSet<>(size);
     }
 
     public void addMember(Member member) {
-        arrayList.add(member);
+        hashSet.add(member);
     }
 
     public boolean removeMember(int memberId) {
@@ -30,13 +31,13 @@ public class MemberArrayList {
         }
          */
         // Iterator
-        Iterator<Member> ir = arrayList.iterator();
+        Iterator<Member> ir = hashSet.iterator();
 
         while(ir.hasNext()) {
             Member member = ir.next();
             int tempId = member.getMemberId();
             if(tempId == memberId) {
-                arrayList.remove(member);
+                hashSet.remove(member);
                 return true;
             }
         }
@@ -47,9 +48,10 @@ public class MemberArrayList {
     }
 
     public void showAll() {
-        for (Member member:arrayList) {
+        for (Member member:hashSet) {
             System.out.println(member);
         }
         System.out.println();
     }
+
 }
