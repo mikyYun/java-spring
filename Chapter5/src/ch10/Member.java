@@ -1,8 +1,13 @@
-package ch08;
+package ch10;
 
-public class Member {
+import java.util.Comparator;
+
+//public class Member implements Comparable<Member>{
+    public class Member implements Comparator<Member> {
     private int memberId;
     private String memberName;
+
+    public Member(){};
 
     // prevent duplicates
     @Override
@@ -47,5 +52,27 @@ public class Member {
     @Override
     public String toString() {
         return memberName + "'s ID is " + memberId;
+    }
+
+//    // compareTo to Comparable
+//    @Override
+//    public int compareTo(Member member) {
+//        // compare with this (coming) data and existing data in tree
+//        // ASC
+//        /*
+//        if (this.memberId > member.memberId) {
+//            return 1;
+//        } else if (this.memberId < member.memberId) {
+//            return -1;
+//        } else {
+//            return 0;
+//        }
+//         */
+//        return (this.memberId - member.memberId);
+//    }
+    // compare to Comparator
+    @Override
+    public int compare(Member member1, Member member2) {
+        return (member1.memberId - member2.memberId);
     }
 }
